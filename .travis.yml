@@ -1,4 +1,8 @@
 language: ruby
 rvm:
   - '2.5.7'
+services:
+  - mysql
+before_install:
+  - mysql -e 'CREATE DATABASE test;'
 script: 'bundle exec rspec'

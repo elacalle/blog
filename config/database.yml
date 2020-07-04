@@ -24,6 +24,8 @@ development:
 test:
   <<: *default
   database: test
+  username: travis
+  password: '' 
 
 production:
   <<: *default
