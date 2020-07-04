@@ -7,6 +7,7 @@
 default: &default
   adapter: mysql2 
   encoding: utf8
+  collation: utf8_general_ci
   reconnect: false
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
