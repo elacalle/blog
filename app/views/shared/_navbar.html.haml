@@ -1,0 +1,9 @@
+%header{ class: %w(flex items-start w-full p-6 bg-teal-400 items-center) }
+  %div{ class: %w(flex w-full items-center) }
+    %div{ class: %w(flex justify-start w-1/12) }
+      = link_to 'Logo', :root
+
+    %div{ class: %w(flex justify-end w-11/12) }
+      %ul
+        %li
+          = link_to('Registration', :signup)
