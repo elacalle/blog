@@ -17,4 +17,4 @@ jobs:
     - stage: rspec
       script: 'bundle exec rspec'
     - stage: rubocop
-      script: 'bundle exec rspec'
+      script: 'bundle exec rubocop'
