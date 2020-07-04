@@ -5,7 +5,8 @@ inherit_from:
 AllCops:
   Excludes:
     - db/**
-    - config/**
+    - config/**/*
+    - bin/**/*
     - script/**
     - vendor/**/* # Circle adds the rubies here
     - spec/spec_helper.rb # Circle adds the rubies here
