@@ -1,9 +1,11 @@
-inherit_from:
-  - .rubocop_airbnb.yml
+inherit_from: 
+  - .rubocop-airbnb.yml
+  - .rubocop_todo.yml
+
 AllCops:
-  Exclude:
-    - 'node_modules/**/*'
-    - 'config/**/*'
-    - 'bin/**/*'
-    - 'db/**/*'
-    - 'spec/spec_helper.rb'
+  Excludes:
+    - db/**
+    - config/**
+    - script/**
+    - vendor/**/* # Circle adds the rubies here
+    - spec/spec_helper.rb # Circle adds the rubies here
