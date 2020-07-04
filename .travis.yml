@@ -18,3 +18,5 @@ jobs:
       script: 'bundle exec rspec'
     - stage: rubocop
       script: 'bundle exec rubocop'
+    - stage: haml linter
+      script: 'bundle exec haml-lint app/views'

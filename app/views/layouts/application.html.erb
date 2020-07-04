@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsBlog</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
+  <%= render 'shared/header.html.erb' %>
   <body>
-    <%= yield %>
+    <div class='flex flex-wrap items-stretch h-screen container mx-auto'>
+      <%= render 'shared/navbar.html.haml' %>
+      <div class='main-content flex flex-nowrap items-start w-full p-6'>
+        <%= yield %>
+      </div>
+      <%= render 'shared/footer.html.haml' %>
+    </div>
   </body>
 </html>
