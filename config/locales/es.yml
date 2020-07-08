@@ -1,0 +1,11 @@
+es:
+  activerecord:
+      models:
+        user: Usuario 
+      attributes:
+        user:
+          name: nombre
+          email: email 
+          password: contraseña 
+          password_confirmation: confirmación de contraseña 
+  register: Registrarse

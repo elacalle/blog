@@ -1,0 +1,10 @@
+es:
+  users:
+    new:
+      signup_title: Registro
+      name: Nombre
+      email: Email
+      password: Contraseña
+      password_confirmation: Confirmación de contraseña
+      signup: Registrarse
+      success: Registro finalizado con exito.
