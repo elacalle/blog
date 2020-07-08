@@ -15,7 +15,7 @@ before_install:
 jobs:
   include:
     - stage: rspec
-      script: 'bundle exec rspec'
+      script: 'bin/webpack && bundle exec rspec'
     - stage: rubocop
       script: 'bundle exec rubocop'
     - stage: haml linter
