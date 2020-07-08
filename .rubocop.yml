@@ -4,6 +4,7 @@ inherit_from:
 
 AllCops:
   Exclude:
+    - node_modules/**
     - db/**
     - config/**/*
     - bin/**/*

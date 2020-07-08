@@ -45,7 +45,7 @@ RSpec.feature "Signups", type: :feature do
       it 'display error messages' do
         user.valid?
         user.errors.full_messages.each do |error_message|
-          expect(page).to have_content(error_message) 
+          expect(page).to have_content(error_message)
         end
       end
 
