@@ -1,9 +1,10 @@
-language: ruby
-rvm:
-  - '2.5.7'
+language: node_js 
+node_js: '13.9.0'
 services:
   - mysql
 before_install:
+  - rvm install 2.5.7
+  - gem install bundler
   - wget https://repo.mysql.com//mysql-apt-config_0.8.10-1_all.deb
   - sudo dpkg -i mysql-apt-config_0.8.10-1_all.deb
   - sudo apt-get update -q
