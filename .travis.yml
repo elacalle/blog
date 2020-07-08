@@ -1,10 +1,9 @@
-language: node_js 
-node_js: '13.9.0'
+language: ruby 
+ruby: '2.5.7'
 services:
   - mysql
 before_install:
-  - rvm install 2.5.7
-  - gem install bundler
+  - nvm install 13.9.0
   - wget https://repo.mysql.com//mysql-apt-config_0.8.10-1_all.deb
   - sudo dpkg -i mysql-apt-config_0.8.10-1_all.deb
   - sudo apt-get update -q
@@ -22,15 +21,9 @@ jobs:
         - 'bundle exec rails assets:precompile'
       script: 'bundle exec rspec'
     - stage: linter 
-    - name: rubocop
+      name: rubocop
       env: NODE_ENV=test
-      before_script: 
-        - 'bundle install'
-        - 'bundle exec rails assets:precompile'
       script: 'bundle exec rubocop'
     - name: haml linter
       env: NODE_ENV=test
-      before_script: 
-        - 'bundle install'
-        - 'bundle exec rails assets:precompile'
       script: 'bundle exec haml-lint app/views'
