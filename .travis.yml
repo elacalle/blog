@@ -13,22 +13,23 @@ before_install:
   - sudo mysql_upgrade
   - mysql --version  
   - mysql -e 'CREATE DATABASE test CHARACTER SET utf8 COLLATE utf8_general_ci';
-env:
-  - NODE_ENV=test
 jobs:
   include:
     - stage: rspec
+      env: NODE_ENV=test
       before_script: 
         - 'bundle install'
         - 'bundle exec rails assets:precompile'
       script: 'bundle exec rspec'
     - stage: linter 
     - name: rubocop
+      env: NODE_ENV=test
       before_script: 
         - 'bundle install'
         - 'bundle exec rails assets:precompile'
       script: 'bundle exec rubocop'
     - name: haml linter
+      env: NODE_ENV=test
       before_script: 
         - 'bundle install'
         - 'bundle exec rails assets:precompile'
