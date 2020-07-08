@@ -12,10 +12,13 @@ before_install:
   - sudo mysql_upgrade
   - mysql --version  
   - mysql -e 'CREATE DATABASE test CHARACTER SET utf8 COLLATE utf8_general_ci';
+env:
+  - NODE_ENV=test
 jobs:
   include:
     - stage: rspec
-      script: 'bin/webpack && bundle exec rspec'
+      before_script: 'bundle exec rails assets:precompile'
+      script: 'bundle exec rspec'
     - stage: rubocop
       script: 'bundle exec rubocop'
     - stage: haml linter
