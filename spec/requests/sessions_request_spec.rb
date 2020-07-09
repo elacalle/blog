@@ -41,8 +41,8 @@ RSpec.describe "Sessions", type: :request do
         expect(session[:user_id]).to be_nil
       end
 
-      it 'give error messaje' do
-        expect(flash[:warning]).to eq I18n.t('sessions.new.failed_login')
+      it 'give error message' do
+        expect(flash[:warning]).to include I18n.t('sessions.new.failed_login')
       end
     end
   end
