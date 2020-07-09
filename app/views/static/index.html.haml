@@ -1,1 +1,6 @@
 = provide(:title, site_title('Home'))
+
+- if current_user
+  %p Hello #{current_user.name}
+- else
+  %p Please login to visit our content

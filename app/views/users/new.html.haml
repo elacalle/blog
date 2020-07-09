@@ -3,7 +3,7 @@
   %div{ class: %w(flex flex-wrap w-6/12) }
     %div{ class: %w(flex flex-wrap w-full) }
       - if @user.errors.any?
-        = render partial: 'shared/errors', object: @user.errors
+        = render partial: 'shared/errors', locals: { errors: @user.errors.full_messages }
       %h1{ class: %w(text-lg font-semibold w-full) }= t('.signup_title')
       - if flash[:success]
         %div

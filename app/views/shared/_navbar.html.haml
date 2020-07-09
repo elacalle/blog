@@ -4,6 +4,9 @@
       = link_to 'Logo', :root
 
     %div{ class: %w(flex justify-end w-11/12) }
-      %ul
-        %li
-          = link_to(t('register'), :signup)
+      %ul.flex
+        - if current_user
+          %li= link_to(t('logout'), '#', { class: %w(mr-3) })
+        - else
+          %li= link_to(t('register'), :signup, { class: %w(mr-3) })
+          %li= link_to(t('login'), :login)

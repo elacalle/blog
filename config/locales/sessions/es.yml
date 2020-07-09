@@ -1,0 +1,8 @@
+es:
+  sessions:
+    new:
+      failed_login: Error de inicio de sesión 
+      login_title: Inicio de sesión
+      login: Iniciar sesion 
+      email: Email
+      password: Contraseña

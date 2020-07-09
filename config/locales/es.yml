@@ -9,3 +9,4 @@ es:
           password: contraseña 
           password_confirmation: confirmación de contraseña 
   register: Registrarse
+  login: Login 
