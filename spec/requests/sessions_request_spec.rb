@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Sessions", type: :request do
   describe 'POST /login' do
-    context 'successfull login' do
+    context 'successfull' do
       let(:user) do
         FactoryBot.create(:user)
       end
@@ -20,7 +20,7 @@ RSpec.describe "Sessions", type: :request do
       end
     end
 
-    context 'not sucessful login' do
+    context 'not sucessful' do
       let(:user) do
         instance_double(
           'User',
