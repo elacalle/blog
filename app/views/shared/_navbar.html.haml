@@ -1,12 +1,17 @@
 %header{ class: %w(flex items-start w-full p-6 bg-teal-400 items-center) }
   %div{ class: %w(flex w-full items-center) }
     %div{ class: %w(flex justify-start w-1/12) }
-      = link_to 'Logo', :root
+      %div
+      - if current_user
+        %p= t('hi', name: current_user.name)
+      - else
+        %p Sample blog
+
 
     %div{ class: %w(flex justify-end w-11/12) }
       %ul.flex
         - if current_user
-          %li= link_to(t('logout'), '#', { class: %w(mr-3) })
+          %li= link_to(t('logout'), logout_path, { method: 'delete', class: %w(mr-3) })
         - else
           %li= link_to(t('register'), :signup, { class: %w(mr-3) })
           %li= link_to(t('login'), :login)

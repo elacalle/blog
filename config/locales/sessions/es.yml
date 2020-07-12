@@ -6,3 +6,7 @@ es:
       login: Iniciar sesion 
       email: Email
       password: Contraseña
+    create:
+      success_login: Has iniciado sesión con exito.
+    destroy:
+      success_logout: Has salido de la sesión con exito.

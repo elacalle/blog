@@ -5,7 +5,7 @@ RSpec.feature "Signups", type: :feature do
     visit('/signup')
   end
 
-  describe 'login' do
+  describe 'signup' do
     context 'data is valid' do
       let(:user) do
         instance_double(
@@ -22,10 +22,6 @@ RSpec.feature "Signups", type: :feature do
 
       it 'do not have error component' do
         expect(page).not_to have_css('.errors')
-      end
-
-      it 'user recorded' do
-        expect(User.count).to eq 1
       end
     end
 
@@ -47,10 +43,6 @@ RSpec.feature "Signups", type: :feature do
         user.errors.full_messages.each do |error_message|
           expect(page).to have_content(error_message)
         end
-      end
-
-      it 'user not recorded' do
-        expect(User.count).to eq 0
       end
     end
   end
