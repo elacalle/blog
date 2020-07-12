@@ -1,0 +1,16 @@
+= provide(:title, site_title('Login'))
+%div{ class: %(flex w-full justify-center) }
+  %div{ class: %w(flex flex-wrap w-6/12) }
+    %div{ class: %w(flex flex-wrap w-full) }
+      - if flash[:warning]
+        = render partial: 'shared/errors', locals: { errors: flash[:warning] }
+      %h1{ class: %w(text-lg font-semibold w-full) }= t('.login_title')
+      = form_with scope: :session, html: { class: 'w-full' }, local: true do |f|
+        %div{ class: %w(flex flex-wrap w-full mt-4) }
+          %div{ class: 'flex mt-4 w-full' }
+            = f.label :email, t('.email'), { class: 'w-3/12' }
+            = f.email_field :email, { class: 'w-9/12 border-solid border-1 border-black ml-2' }
+          %div{ class: 'flex mt-4 w-full' }
+            = f.label :password, t('.password'), { class: 'w-5/12' }
+            = f.password_field :password, { class: 'w-7/12 border-solid border-1 border-black ml-2' }
+          = f.submit t('.login'), { class: 'mt-4 w-full' }

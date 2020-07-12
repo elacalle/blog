@@ -7,4 +7,5 @@ es:
       password: Contraseña
       password_confirmation: Confirmación de contraseña
       signup: Registrarse
+    create:
       success: Registro finalizado con exito.

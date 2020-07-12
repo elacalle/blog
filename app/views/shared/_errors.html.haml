@@ -1,4 +1,4 @@
 %div{ class: 'errors flex flex-wrap mb-5' }
   %ul
-    - errors.full_messages.each do |error|
+    - errors.each do |error|
       %li= error

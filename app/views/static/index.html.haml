@@ -1,1 +1,8 @@
 = provide(:title, site_title('Home'))
+
+- if flash[:success]
+  %p= flash[:success]
+- if current_user
+  %p Hello #{current_user.name}
+- else
+  %p Please login to visit our content
