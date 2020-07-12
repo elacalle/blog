@@ -21,6 +21,7 @@ RSpec.describe "Users", type: :request do
 
       it 'create user' do
         user = build(:user)
+
         expect { signup user }.to change(User, :count).by 1
       end
 
