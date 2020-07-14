@@ -20,7 +20,7 @@ RSpec.describe "Sessions", type: :request do
       before { login user }
 
       it 'redirects to root' do
-        expect(subject).to redirect_to(root_path)
+        expect(subject).to render_template(root_path)
       end
 
       it 'save session user id' do

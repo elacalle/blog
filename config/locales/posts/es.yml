@@ -1,0 +1,4 @@
+es:
+  posts:
+    create:
+      success: Post creado con exito.

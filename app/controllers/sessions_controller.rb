@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
 
     if @user && @user.valid_password?(params[:session][:password])
       session[:user_id] = @user.id
-      flash[:success] = [I18n.t('sessions.create.success_login')]
+      flash.now[:success] = [I18n.t('sessions.create.success_login')]
 
-      redirect_to root_path
+      render 'static/index'
     else
       flash[:warning] = [I18n.t('sessions.new.failed_login')]
 
