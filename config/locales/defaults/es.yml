@@ -1,0 +1,5 @@
+es:
+  register: Registrarse
+  login: Entrar 
+  logout: Salir 
+  hi: Hola %{name}

@@ -1,7 +1,7 @@
 es:
   users:
     new:
-      signup_title: Registro
+      title: Registro
       name: Nombre
       email: Email
       password: Contraseña
