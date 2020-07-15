@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :is_logged_in?
+
   def new
   end
 
