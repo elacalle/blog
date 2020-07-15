@@ -3,6 +3,9 @@
 - if flash[:success]
   %p= flash[:success]
 - if current_user
-  %p Hello #{current_user.name}
+  - @posts.each do |post|
+    %ul
+      %li= post.title
+      %li= post.content
 - else
   %p Please login to visit our content

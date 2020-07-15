@@ -1,0 +1,8 @@
+es:
+  activerecord:
+      models:
+        post: post
+      attributes:
+        post:
+          title: titulo
+          content: contenido

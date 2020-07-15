@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :is_logged_in?
 
   def new
+    @post = Post.new
   end
 
   def create
@@ -14,7 +15,7 @@ class PostsController < ApplicationController
       flash[:success] = I18n.t('posts.create.success')
       redirect_to root_path
     else
-      flash[:warning] = I18n.t('asd')
+      render :new
     end
   end
 

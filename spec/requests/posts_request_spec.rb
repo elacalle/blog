@@ -71,7 +71,10 @@ RSpec.describe "Posts", type: :request do
           )
         end
 
-        before { create_post new_post }
+        before do
+          get new_post_path
+          create_post new_post
+        end
 
         it 'not redirect' do
           expect(response).not_to redirect_to root_path
