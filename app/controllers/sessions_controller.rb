@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :access_login, only: [:new]
+
   def new
   end
 
@@ -27,5 +29,11 @@ class SessionsController < ApplicationController
 
       redirect_to root_path
     end
+  end
+
+  private
+
+  def access_login
+    redirect_to root_path if helpers.current_user
   end
 end
