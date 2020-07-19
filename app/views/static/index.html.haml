@@ -11,6 +11,10 @@
       %div{ class: 'flex flex-wrap w-full pt-2 pb-2' }
         .w-full.font-bold= post.title
         .w-full= post.content
+        .w-full
+          created by:
+          = post.user.name
+    = paginate @posts
   - else
     = t('.not_posts')
 - else

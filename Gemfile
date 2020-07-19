@@ -25,6 +25,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'haml'
 # Localizations
 gem 'rails-i18n', '~> 6.0.0'
+# Add rails pagination
+gem 'kaminari'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

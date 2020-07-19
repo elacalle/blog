@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.default.page params[:page]
   end
 end

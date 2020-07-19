@@ -8,3 +8,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Create a list of users
+FactoryBot.create_list(:user, 10)
+
+# Create a lists of posts
+FactoryBot.create_list(:post, 100, user: User.all.sample)
