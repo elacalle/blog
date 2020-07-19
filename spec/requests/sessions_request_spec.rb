@@ -4,14 +4,27 @@ RSpec.describe "Sessions", type: :request do
   let(:user) { create(:user) }
 
   describe 'GET /login' do
-    before { get login_path }
+    context 'logged out' do
+      before { get login_path }
 
-    it 'have OK http status' do
-      expect(response).to have_http_status 200
+      it 'have OK http status' do
+        expect(response).to have_http_status 200
+      end
+
+      it 'render login page' do
+        expect(subject).to render_template(:new)
+      end
     end
 
-    it 'render login page' do
-      expect(subject).to render_template(:new)
+    context 'logged in' do
+      before do
+        login user
+        get login_path
+      end
+
+      it 'redirects to root path' do
+        expect(subject).to redirect_to root_path
+      end
     end
   end
 
