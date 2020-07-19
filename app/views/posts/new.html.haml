@@ -1,0 +1,16 @@
+= provide(:title, site_title(t('.title')))
+%div{ class: %(flex w-full justify-center) }
+  %div{ class: %w(flex flex-wrap w-6/12) }
+    %div{ class: %w(flex flex-wrap w-full) }
+    %h1{ class: %w(text-lg font-semibold w-full) }= t('.title')
+    = form_for @post, remote: false, method: :post do |f|
+      %div{ class: %w(flex flex-wrap w-full mt-4) }
+        %div{ class: 'flex mt-4 w-full' }
+          = f.label :title, { class: 'w-3/12' }
+          = f.text_field :title, { class: 'w-9/12 border-solid border-1 border-black ml-2' }
+        %div{ class: 'flex mt-4 w-full' }
+          = f.label :content, { class: 'w-3/12' }
+          %div{ class: 'resize-none w-9/12 border border-black ml-2 w-full' }
+            = f.text_area :content, { class: 'resize-none w-full' }
+        %div{ class: 'flex mt-4 w-full' }
+          = f.submit t('.save'), { class: 'mt-4 w-full' }

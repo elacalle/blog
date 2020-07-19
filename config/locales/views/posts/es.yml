@@ -1,0 +1,7 @@
+es:
+  posts:
+    new:
+      title: Nuevo post
+      save: guardar
+    create:
+      success: post creado con exito.

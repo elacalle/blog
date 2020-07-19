@@ -2,9 +2,12 @@
 <html>
   <%= render 'shared/header.html.erb' %>
   <body>
-    <div class='flex flex-wrap items-stretch h-screen container mx-auto'>
+    <div class='flex flex-wrap container mx-auto'>
       <%= render 'shared/navbar.html.haml' %>
-      <div class='main-content flex flex-nowrap items-start w-full p-6'>
+      <div class='main-content flex flex-wrap w-full p-6'>
+        <%  if flash[:notification] %>
+          <%= render partial: 'shared/notification', locals: { messages: flash[:notification]['messages'] } %>
+        <% end %>
         <%= yield %>
       </div>
       <%= render 'shared/footer.html.haml' %>

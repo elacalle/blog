@@ -21,7 +21,7 @@ RSpec.feature "Signups", type: :feature do
       end
 
       it 'do not have error component' do
-        expect(page).not_to have_css('.errors')
+        expect(page).not_to have_css('.warning')
       end
     end
 
@@ -35,7 +35,7 @@ RSpec.feature "Signups", type: :feature do
       end
 
       it 'display error component' do
-        expect(page).to have_css('.errors')
+        expect(page).to have_css('.warning')
       end
 
       it 'display error messages' do

@@ -1,0 +1,4 @@
+%div{ class: "justify-center flex w-full flex-wrap mb-5 #{flash[:notification]['type']}" }
+  %ul
+    - messages.each do |message|
+      %li= message

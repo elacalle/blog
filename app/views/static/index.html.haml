@@ -3,6 +3,15 @@
 - if flash[:success]
   %p= flash[:success]
 - if current_user
-  %p Hello #{current_user.name}
+  - if @posts.any?
+    .flex
+      .w-full.mb-8
+        %h1 Last posts
+    - @posts.each do |post|
+      %div{ class: 'flex flex-wrap w-full pt-2 pb-2' }
+        .w-full.font-bold= post.title
+        .w-full= post.content
+  - else
+    = t('.not_posts')
 - else
   %p Please login to visit our content

@@ -4,7 +4,7 @@ RSpec.feature "Sessions", type: :feature do
   let(:user) { create(:user) }
 
   describe 'logout' do
-    context 'is successfull' do
+    context 'successfull' do
       before do
         login user
         logout
@@ -24,9 +24,9 @@ RSpec.feature "Sessions", type: :feature do
   end
 
   describe 'login' do
-    before { login user }
-
     context 'is successfull' do
+      before { login user }
+
       it 'show success message' do
         expect(page).to have_content(I18n.t('sessions.create.success_login'))
       end
@@ -37,6 +37,17 @@ RSpec.feature "Sessions", type: :feature do
 
       it 'appear user name' do
         expect(page).to have_content(I18n.t('hi', name: user.name))
+      end
+    end
+
+    context 'not successful' do
+      before do
+        user.email = nil
+        login user
+      end
+
+      it 'show error message' do
+        expect(page).to have_content(I18n.t('sessions.new.failed_login'))
       end
     end
   end
