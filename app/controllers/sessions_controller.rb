@@ -7,11 +7,11 @@ class SessionsController < ApplicationController
 
     if @user && @user.valid_password?(params[:session][:password])
       session[:user_id] = @user.id
-      flash[:success] = [I18n.t('sessions.create.success_login')]
+      flash[:notification] = { type: :success, messages: [I18n.t('sessions.create.success_login')] }
 
       redirect_to root_path
     else
-      flash[:warning] = [I18n.t('sessions.new.failed_login')]
+      flash[:notification] = { type: :warning, messages: [I18n.t('sessions.new.failed_login')] }
 
       redirect_to login_path
     end
@@ -20,7 +20,10 @@ class SessionsController < ApplicationController
   def destroy
     if helpers.current_user
       reset_session
-      flash[:success] = I18n.t('sessions.destroy.success_logout')
+      flash[:notification] = {
+        type: :success,
+        messages: [I18n.t('sessions.destroy.success_logout')],
+      }
 
       redirect_to root_path
     end

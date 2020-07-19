@@ -2,12 +2,7 @@
 %div{ class: %(flex w-full justify-center) }
   %div{ class: %w(flex flex-wrap w-6/12) }
     %div{ class: %w(flex flex-wrap w-full) }
-      - if @user.errors.any?
-        = render partial: 'shared/errors', locals: { errors: @user.errors.full_messages }
       %h1{ class: %w(text-lg font-semibold w-full) }= t('.title')
-      - if flash[:success]
-        %div
-          %span= flash[:success]
       = form_with model: @user, html: { class: 'w-full' }, url: signup_path, local: true do |f|
         %div{ class: %w(flex flex-wrap w-full mt-4) }
           %div{ class: 'flex mt-4 w-full' }

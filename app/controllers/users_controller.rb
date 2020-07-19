@@ -6,11 +6,14 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.valid?
-      flash[:success] = I18n.t('users.create.success') if @user.valid?
+      flash[:notification] = { type: :success, messages: [I18n.t('users.create.success')] }
 
       redirect_to signup_path
     else
-      render :new
+      errors = @user.errors.full_messages.flatten
+      flash[:notification] = { type: :warning, messages: errors }
+
+      redirect_to signup_path
     end
   end
 

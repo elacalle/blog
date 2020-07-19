@@ -26,11 +26,11 @@ RSpec.describe "Users", type: :request do
       end
 
       it 'exists success message' do
-        expect(flash[:success]).not_to be_nil
+        expect(flash[:notification][:messages]).not_to be_nil
       end
 
       it 'have login message' do
-        expect(flash[:success]).to include I18n.t('users.create.success')
+        expect(flash[:notification][:messages]).to include I18n.t('users.create.success')
       end
     end
 

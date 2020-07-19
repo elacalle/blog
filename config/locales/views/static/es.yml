@@ -1,0 +1,4 @@
+es:
+  static:
+    index:
+      not_posts: 'No hay posts.'

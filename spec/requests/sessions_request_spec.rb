@@ -48,7 +48,7 @@ RSpec.describe "Sessions", type: :request do
       end
 
       it 'give error message' do
-        expect(flash[:warning]).to include I18n.t('sessions.new.failed_login')
+        expect(flash[:notification][:messages]).to include I18n.t('sessions.new.failed_login')
       end
     end
   end
@@ -65,7 +65,7 @@ RSpec.describe "Sessions", type: :request do
       end
 
       it 'show message' do
-        expect(flash[:success]).to eq I18n.t('sessions.destroy.success_logout')
+        expect(flash[:notification][:messages]).to include I18n.t('sessions.destroy.success_logout')
       end
 
       it 'redirect to root_url' do

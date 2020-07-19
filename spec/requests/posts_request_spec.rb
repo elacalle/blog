@@ -58,7 +58,7 @@ RSpec.describe "Posts", type: :request do
         end
 
         it 'return success message' do
-          expect(flash[:success]).to eq I18n.t('posts.create.success')
+          expect(flash[:notification][:messages]).to include I18n.t('posts.create.success')
         end
       end
 
